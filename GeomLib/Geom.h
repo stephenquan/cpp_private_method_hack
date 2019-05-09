@@ -17,7 +17,7 @@ signals:
     void wChanged();
     void hChanged();
 
-public:
+protected:
     inline double w() const { return m_w; }
     inline double h() const { return m_h; }
     void setW(double w);

@@ -20,7 +20,7 @@ class MyGeom : public Geom
 public:
     MyGeom(QObject* parent = nullptr);
 
-    double area() const;
+    Q_INVOKABLE double area() const;
 
 };
 

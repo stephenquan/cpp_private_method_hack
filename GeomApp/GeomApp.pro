@@ -17,10 +17,14 @@ DEFINES += QT_DEPRECATED_WARNINGS
 SOURCES += \
         main.cpp
 
-CONFIG(debug, debug|release) {
-    LIBS += -L$$shell_path(..\GeomLib\debug)
+win: {
+    CONFIG(debug, debug|release) {
+        LIBS += -L$$shell_path(../GeomLib/debug)
+    } else {
+        LIBS += -L$$shell_path(../GeomLib/release)
+    }
 } else {
-    LIBS += -L$$shell_path(..\GeomLib\release)
+    LIBS += -L$$shell_path(../GeomLib)
 }
 LIBS += -lGeomLib
 

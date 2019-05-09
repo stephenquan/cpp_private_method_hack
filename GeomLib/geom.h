@@ -1,5 +1,5 @@
-#ifndef Geom_H
-#define Geom_H
+#ifndef GEOM_H
+#define GEOM_H
 
 class Geom
 {
@@ -16,9 +16,7 @@ private:
     double m_h;
 
     double _area() const;
-    
+
 };
 
-#endif
-
-
+#endif // GEOM_H

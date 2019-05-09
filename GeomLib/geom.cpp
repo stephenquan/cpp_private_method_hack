@@ -20,5 +20,3 @@ double Geom::_area() const
 {
     return w() * h();
 }
-
-

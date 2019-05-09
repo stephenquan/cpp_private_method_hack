@@ -5,6 +5,8 @@
 
 class Geom : public QObject
 {
+    friend class MyGeom;
+
     Q_OBJECT
 
     Q_PROPERTY(double w READ w WRITE setW NOTIFY wChanged)

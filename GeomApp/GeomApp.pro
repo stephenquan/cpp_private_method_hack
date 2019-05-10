@@ -19,16 +19,9 @@ SOURCES += \
         MyGeom.cpp \
         main.cpp
 
-win32: {
-    CONFIG(debug, debug|release) {
-        LIBS += -L$$shell_path(../GeomLib/debug)
-    } else {
-        LIBS += -L$$shell_path(../GeomLib/release)
-    }
-} else {
-    LIBS += -L$$shell_path(../GeomLib)
-}
-LIBS += -lGeomLib
+win32:CONFIG(release, debug|release): LIBS += -L../GeomLib/release -lGeomLib
+else:win32:CONFIG(debug, debug|release): LIBS += -L../GeomLib/debug -lGeomLib
+else:unix: LIBS += -L../GeomLib -lGeomLib
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
